@@ -1,0 +1,1090 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://github.com/remy/inliner">inliner (v1.12.1)</a>
+</h1>
+<h4>Utility to inline images, CSS and JavaScript for a web page - useful for mobile sites</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner">module inliner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.inliner">
+            function <span class="apidocSignatureSpan"></span>inliner
+            <span class="apidocSignatureSpan">(source, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.defaults">
+            function <span class="apidocSignatureSpan">inliner.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.get">
+            function <span class="apidocSignatureSpan">inliner.</span>get
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.image">
+            function <span class="apidocSignatureSpan">inliner.</span>image
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.javascript">
+            function <span class="apidocSignatureSpan">inliner.</span>javascript
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.super_">
+            function <span class="apidocSignatureSpan">inliner.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.toString">
+            function <span class="apidocSignatureSpan">inliner.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inliner.</span>css</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">inliner.</span>errors</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.css">module inliner.css</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.css.getImages">
+            function <span class="apidocSignatureSpan">inliner.css.</span>getImages
+            <span class="apidocSignatureSpan">(root, css)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.css.getImports">
+            function <span class="apidocSignatureSpan">inliner.css.</span>getImports
+            <span class="apidocSignatureSpan">(root, css)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.defaults">module inliner.defaults</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.defaults.defaults">
+            function <span class="apidocSignatureSpan">inliner.</span>defaults
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.get">module inliner.get</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.get.get">
+            function <span class="apidocSignatureSpan">inliner.</span>get
+            <span class="apidocSignatureSpan">(url, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.image">module inliner.image</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.image.image">
+            function <span class="apidocSignatureSpan">inliner.</span>image
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.javascript">module inliner.javascript</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.javascript.javascript">
+            function <span class="apidocSignatureSpan">inliner.</span>javascript
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.inliner.toString">module inliner.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.inliner.toString.toString">
+            function <span class="apidocSignatureSpan">inliner.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner" id="apidoc.module.inliner">module inliner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.inliner" id="apidoc.element.inliner.inliner">
+        function <span class="apidocSignatureSpan"></span>inliner
+        <span class="apidocSignatureSpan">(source, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Inliner(source, options, callback) {
+  var inliner = this;
+  events.EventEmitter.call(this);
+
+  // allow for source to be optional
+  if (typeof source !== 'string') {
+    callback = options;
+    options = source;
+  }
+
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  }
+
+  if (!options) {
+    options = {};
+  }
+
+  if (options.url) {
+    this.url = options.url;
+  }
+
+  if (options.filename) {
+    this.filename = options.filename;
+  }
+
+  if (options.source) {
+    this.source = options.source;
+  } else {
+    this.source = source;
+  }
+
+  // this is an intentioal change. `.headers` is compatible with the request
+  // module, but -H and --header is compatible (i.e. the same as) cURL
+  if (options.header) {
+    options.headers = options.header;
+    delete options.header;
+  }
+
+  if (options.headers &amp;&amp; !Array.isArray(options.headers)) {
+    options.headers = [options.headers];
+  }
+
+  if (options.headers &amp;&amp; Array.isArray(options.headers)) {
+    options.headers = options.headers.reduce(function (acc, curr) {
+      if (typeof curr === 'string') {
+        var parts = curr.split(':').map(function (s) {
+          return s.trim();
+        });
+        acc[parts[0]] = parts[1];
+      } else {
+        var key = Object.keys(curr);
+        acc[key] = curr[key];
+      }
+      return acc;
+    }, {});
+  }
+
+  if (options.headers &amp;&amp; typeof options.headers[0] === 'string') {
+    // convert to an object of key/value pairs
+    options.headers = options.headers.reduce(function (acc, curr) {
+      var pair = querystring.parse(curr);
+      var key = Object.keys(pair).shift();
+      acc[key] = pair[key];
+      return acc;
+    }, {});
+  }
+
+  this.headers = options.headers || {};
+
+  this.callback = function wrapper(error, res) {
+    // noop the callback once it's fired
+    inliner.callback = function noop() {
+      inliner.emit('error', 'callback fired again');
+    };
+
+    callback(error, res);
+  };
+  this.options = assign({}, Inliner.defaults(), options);
+  this.jobs = {
+    total: 0,
+    todo: 0,
+    tasks: tasks,
+    add: this.addJob.bind(this),
+    breakdown: {},
+    done: {},
+  };
+
+  Object.keys(this.jobs.tasks).forEach(function (key) {
+    this.jobs.breakdown[key] = 0;
+    this.jobs.done[key] = this.completeJob.bind(this, key);
+  }.bind(this));
+
+  this.isFile = options.useStdin || false;
+
+  this.on('error', function localErrorHandler(event) {
+    inliner.callback(event);
+  });
+
+  // this allows the user code to get the object back before
+  // it starts firing events
+  if (this.source) {
+    if (typeof setImmediate === 'undefined') {
+      global.setImmediate = function setImmediatePolyfill(fn) {
+        // :-/
+        setTimeout(fn, 0);
+      };
+    }
+    this.promise = new Promise(function (resolve) {
+      global.setImmediate(function () {
+        resolve(inliner.main());
+      });
+    });
+  } else {
+    this.promise = Promise.reject(new Error('No source to inline'));
+  }
+
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.defaults" id="apidoc.element.inliner.defaults">
+        function <span class="apidocSignatureSpan">inliner.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function () {
+  return {
+    images: true,
+    compressCSS: true,
+    compressJS: true,
+    collapseWhitespace: true,
+    nosvg: false, // by default, DO compress SVG with SVGO
+    skipAbsoluteUrls: false,
+    preserveComments: false,
+    iesafe: false,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.get" id="apidoc.element.inliner.get">
+        function <span class="apidocSignatureSpan">inliner.</span>get
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(url, options) {
+  var inliner = this;
+  if (url.indexOf('data:') === 0) {
+    debug('asset already inline', url);
+    return Promise.resolve({
+      headers: {
+        'content-type': url.slice(5).replace(/;.*$/, ''),
+      },
+      body: url,
+    });
+  }
+
+  if (cache[url]) {
+    debug('request responding with cache');
+    return cache[url];
+  }
+
+  var base = basename(url);
+
+  this.emit('progress', 'loading ' + base);
+
+  if (this.isFile &amp;&amp; url.indexOf('http') !== 0) {
+    debug('inliner.get file: %s', url);
+    cache[url] = fs.readFile(url).then(function read(body) {
+      return {
+        body: body,
+        headers: {
+          'content-type': mime.lookup(url),
+        },
+      };
+    }).catch(function (error) {
+      if (error.code === 'ENOENT') {
+        inliner.emit('warning', 'no such file: ' + base);
+      }
+
+      return {
+        body: '',
+        headers: {
+          'content-type': mime.lookup(url),
+        },
+      };
+    });
+
+    return cache[url];
+  }
+
+  debug('inliner.get url: %s', url);
+
+  var settings = assign({}, options, {
+    encoding: null,
+    followRedirect: true,
+    headers: inliner.headers,
+  });
+
+  debug('request %s', url, settings);
+
+  cache[url] = new Promise(function (resolve) {
+    request(encodeURI(url), settings, function response(error, res, body) {
+      if (error) {
+        debug('request failed: %s', error.message);
+        inliner.emit('warning', 'failed to request ' + base + ' (' +
+          error.message + ')');
+
+        body = '';
+        res = {
+          headers: {},
+        };
+      } else if (res.statusCode !== 200) {
+        inliner.emit('warning', res.statusCode + ' on ' + base);
+      }
+
+      debug('response: %s %s', res.statusCode, url);
+
+      if (res.statusCode &gt;= 400) {
+        body = '';
+      }
+
+      resolve({
+        body: body,
+        headers: res.headers,
+        statusCode: res.statusCode,
+      });
+    });
+  });
+
+  return cache[url];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .replace(/['}"()]/g, '')
+  .replace(/;/, '')
+  .trim()
+  .split(' '); // clean up
+
+// if url has a length &gt; 1, then we have media types to target
+var resolvedURL = inliner.resolve(root, url[0]);
+return inliner.<span class="apidocCodeKeywordSpan">get</span>(resolvedURL).then(function then(res) {
+  var importedCSS = convertCharset(res.body);
+  inliner.jobs.done.links();
+  inliner.emit('progress', 'import ' + basename(resolvedURL));
+  if (url.length &gt; 1) {
+    url.shift();
+    importedCSS = '@media ' + url.join(' ') + '{' + importedCSS + '}';
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.image" id="apidoc.element.inliner.image">
+        function <span class="apidocSignatureSpan">inliner.</span>image
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function image(url) {
+  url = url.replace(/\??#.*$/, '');
+  var inliner = this;
+  this.emit('progress', 'get image ' + basename(url));
+  return this.get(url, { encoding: 'binary' }).then(function then(res) {
+    if (url.indexOf('data:') === 0) {
+      return url;
+    }
+
+    debug('image loaded: %s', url);
+
+    // if the url is SVG, let's compress and use the XML directly
+    if (res.body &amp;&amp; mime.lookup(url) === 'image/svg+xml' &amp;&amp;
+      !inliner.options.nosvg) {
+      return new Promise(function (resolve, reject) {
+        svgo.optimize(res.body.toString(), function (result) {
+          debug('optimising svg');
+          if (result.error) {
+            debug('errored', result.error);
+            return reject(new Error(result.error));
+          }
+          var replacements = {
+            '&lt;': '%3C',
+            '&gt;': '%3E',
+            '"': '%22',
+            '\'': '%27',
+          };
+          var body = result.data.replace(/["'&lt;&gt;]/g, function (m) {
+            return replacements[m];
+          });
+          resolve('data:image/svg+xml;utf8,' + body);
+        });
+      });
+    }
+
+    // otherwise we base64 encode the image
+    return 'data:' + res.headers['content-type'] + ';base64,' +
+            new Buffer(res.body, 'binary').toString('base64');
+
+  }).catch(function errorHandle(error) {
+    debug('image %s failed to load', url, error);
+    throw error;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  };
+});
+
+debug('adding %s CSS assets', images.length);
+inliner.jobs.add('images', images.length);
+
+return Promise.all(images.map(function map(url) {
+  return inliner.<span class="apidocCodeKeywordSpan">image</span>(url.resolved).then(function then(dataURL) {
+    inliner.jobs.done.images();
+    css = replace(css, url.source, 'url("' + dataURL + '")');
+    return css;
+  });
+})).then(function then() {
+  return css;
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.javascript" id="apidoc.element.inliner.javascript">
+        function <span class="apidocSignatureSpan">inliner.</span>javascript
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uglify(source) {
+  var notIESafe = !this.options.iesafe;
+
+  this.emit('progress', 'compressing javascript');
+
+  source = source.trim();
+
+  if (source === '') {
+    this.jobs.done.js();
+    return '';
+  }
+
+  debug('uglifying %sbytes', source.length);
+
+  var result = '';
+
+  try {
+    result = UglifyJS.minify(source, {
+      fromString: true,
+      // must set screw_ie8 for each option group
+      // https://github.com/mishoo/UglifyJS2/issues/1204#issuecomment-234714094
+      // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+      compress: { screw_ie8: notIESafe },
+      mangle: { screw_ie8: notIESafe },
+      output: { screw_ie8: notIESafe },
+      // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+    }).code;
+  } catch (e) {
+    // failed to uglify, just return it plain
+    result = source;
+  }
+
+  this.jobs.done.js();
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.super_" id="apidoc.element.inliner.super_">
+        function <span class="apidocSignatureSpan">inliner.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.toString" id="apidoc.element.inliner.toString">
+        function <span class="apidocSignatureSpan">inliner.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function getImports(root, css) {
+css = convertCharset(css);
+// change to a string in case the CSS is a buffer, which is the case
+// when we're reading off the local file system
+if (typeof css !== 'string') {
+  css = css.<span class="apidocCodeKeywordSpan">toString</span>();
+}
+var position = css.indexOf('@import');
+var inliner = this;
+
+if (position !== -1) {
+  inliner.jobs.add('link', 1);
+  var match = (css.match(/@import(\s*.*?);/) || [null, ''])[1];
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.css" id="apidoc.module.inliner.css">module inliner.css</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.css.getImages" id="apidoc.element.inliner.css.getImages">
+        function <span class="apidocSignatureSpan">inliner.css.</span>getImages
+        <span class="apidocSignatureSpan">(root, css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getImages(root, css) {
+  var inliner = this;
+
+  if (inliner.options.images === false) {
+    return css;
+  }
+
+  var singleURLMatch = /url\(\s*(['"]*)(?!['"]*data:)(.*?)(['"]*)\s*\)/;
+  var matches = css.match(match) || [];
+  var images = matches.map(function eachURL(url) {
+    var match = url.match(singleURLMatch);
+    var source = match[2];
+    return {
+      source: match.input,
+      resolved: inliner.resolve(root, source),
+    };
+  });
+
+  debug('adding %s CSS assets', images.length);
+  inliner.jobs.add('images', images.length);
+
+  return Promise.all(images.map(function map(url) {
+    return inliner.image(url.resolved).then(function then(dataURL) {
+      inliner.jobs.done.images();
+      css = replace(css, url.source, 'url("' + dataURL + '")');
+      return css;
+    });
+  })).then(function then() {
+    return css;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.css.getImports" id="apidoc.element.inliner.css.getImports">
+        function <span class="apidocSignatureSpan">inliner.css.</span>getImports
+        <span class="apidocSignatureSpan">(root, css)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getImports(root, css) {
+  css = convertCharset(css);
+  // change to a string in case the CSS is a buffer, which is the case
+  // when we're reading off the local file system
+  if (typeof css !== 'string') {
+    css = css.toString();
+  }
+  var position = css.indexOf('@import');
+  var inliner = this;
+
+  if (position !== -1) {
+    inliner.jobs.add('link', 1);
+    var match = (css.match(/@import(\s*.*?);/) || [null, ''])[1];
+    var url = match.replace(/url/, '')
+      .replace(/['}"()]/g, '')
+      .replace(/;/, '')
+      .trim()
+      .split(' '); // clean up
+
+    // if url has a length &gt; 1, then we have media types to target
+    var resolvedURL = inliner.resolve(root, url[0]);
+    return inliner.get(resolvedURL).then(function then(res) {
+      var importedCSS = convertCharset(res.body);
+      inliner.jobs.done.links();
+      inliner.emit('progress', 'import ' + basename(resolvedURL));
+      if (url.length &gt; 1) {
+        url.shift();
+        importedCSS = '@media ' + url.join(' ') + '{' + importedCSS + '}';
+      }
+
+      css = css.replace('@import' + match, importedCSS);
+      return getImports.call(inliner, root, css);
+    });
+  }
+
+  if (inliner.options.compressCSS) {
+    inliner.emit('progress', 'compress css');
+    css = compress(css);
+  }
+
+  return Promise.resolve(css);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.defaults" id="apidoc.module.inliner.defaults">module inliner.defaults</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.defaults.defaults" id="apidoc.element.inliner.defaults.defaults">
+        function <span class="apidocSignatureSpan">inliner.</span>defaults
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">defaults = function () {
+  return {
+    images: true,
+    compressCSS: true,
+    compressJS: true,
+    collapseWhitespace: true,
+    nosvg: false, // by default, DO compress SVG with SVGO
+    skipAbsoluteUrls: false,
+    preserveComments: false,
+    iesafe: false,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.get" id="apidoc.module.inliner.get">module inliner.get</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.get.get" id="apidoc.element.inliner.get.get">
+        function <span class="apidocSignatureSpan">inliner.</span>get
+        <span class="apidocSignatureSpan">(url, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(url, options) {
+  var inliner = this;
+  if (url.indexOf('data:') === 0) {
+    debug('asset already inline', url);
+    return Promise.resolve({
+      headers: {
+        'content-type': url.slice(5).replace(/;.*$/, ''),
+      },
+      body: url,
+    });
+  }
+
+  if (cache[url]) {
+    debug('request responding with cache');
+    return cache[url];
+  }
+
+  var base = basename(url);
+
+  this.emit('progress', 'loading ' + base);
+
+  if (this.isFile &amp;&amp; url.indexOf('http') !== 0) {
+    debug('inliner.get file: %s', url);
+    cache[url] = fs.readFile(url).then(function read(body) {
+      return {
+        body: body,
+        headers: {
+          'content-type': mime.lookup(url),
+        },
+      };
+    }).catch(function (error) {
+      if (error.code === 'ENOENT') {
+        inliner.emit('warning', 'no such file: ' + base);
+      }
+
+      return {
+        body: '',
+        headers: {
+          'content-type': mime.lookup(url),
+        },
+      };
+    });
+
+    return cache[url];
+  }
+
+  debug('inliner.get url: %s', url);
+
+  var settings = assign({}, options, {
+    encoding: null,
+    followRedirect: true,
+    headers: inliner.headers,
+  });
+
+  debug('request %s', url, settings);
+
+  cache[url] = new Promise(function (resolve) {
+    request(encodeURI(url), settings, function response(error, res, body) {
+      if (error) {
+        debug('request failed: %s', error.message);
+        inliner.emit('warning', 'failed to request ' + base + ' (' +
+          error.message + ')');
+
+        body = '';
+        res = {
+          headers: {},
+        };
+      } else if (res.statusCode !== 200) {
+        inliner.emit('warning', res.statusCode + ' on ' + base);
+      }
+
+      debug('response: %s %s', res.statusCode, url);
+
+      if (res.statusCode &gt;= 400) {
+        body = '';
+      }
+
+      resolve({
+        body: body,
+        headers: res.headers,
+        statusCode: res.statusCode,
+      });
+    });
+  });
+
+  return cache[url];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .replace(/['}"()]/g, '')
+  .replace(/;/, '')
+  .trim()
+  .split(' '); // clean up
+
+// if url has a length &gt; 1, then we have media types to target
+var resolvedURL = inliner.resolve(root, url[0]);
+return inliner.<span class="apidocCodeKeywordSpan">get</span>(resolvedURL).then(function then(res) {
+  var importedCSS = convertCharset(res.body);
+  inliner.jobs.done.links();
+  inliner.emit('progress', 'import ' + basename(resolvedURL));
+  if (url.length &gt; 1) {
+    url.shift();
+    importedCSS = '@media ' + url.join(' ') + '{' + importedCSS + '}';
+  }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.image" id="apidoc.module.inliner.image">module inliner.image</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.image.image" id="apidoc.element.inliner.image.image">
+        function <span class="apidocSignatureSpan">inliner.</span>image
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function image(url) {
+  url = url.replace(/\??#.*$/, '');
+  var inliner = this;
+  this.emit('progress', 'get image ' + basename(url));
+  return this.get(url, { encoding: 'binary' }).then(function then(res) {
+    if (url.indexOf('data:') === 0) {
+      return url;
+    }
+
+    debug('image loaded: %s', url);
+
+    // if the url is SVG, let's compress and use the XML directly
+    if (res.body &amp;&amp; mime.lookup(url) === 'image/svg+xml' &amp;&amp;
+      !inliner.options.nosvg) {
+      return new Promise(function (resolve, reject) {
+        svgo.optimize(res.body.toString(), function (result) {
+          debug('optimising svg');
+          if (result.error) {
+            debug('errored', result.error);
+            return reject(new Error(result.error));
+          }
+          var replacements = {
+            '&lt;': '%3C',
+            '&gt;': '%3E',
+            '"': '%22',
+            '\'': '%27',
+          };
+          var body = result.data.replace(/["'&lt;&gt;]/g, function (m) {
+            return replacements[m];
+          });
+          resolve('data:image/svg+xml;utf8,' + body);
+        });
+      });
+    }
+
+    // otherwise we base64 encode the image
+    return 'data:' + res.headers['content-type'] + ';base64,' +
+            new Buffer(res.body, 'binary').toString('base64');
+
+  }).catch(function errorHandle(error) {
+    debug('image %s failed to load', url, error);
+    throw error;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  };
+});
+
+debug('adding %s CSS assets', images.length);
+inliner.jobs.add('images', images.length);
+
+return Promise.all(images.map(function map(url) {
+  return inliner.<span class="apidocCodeKeywordSpan">image</span>(url.resolved).then(function then(dataURL) {
+    inliner.jobs.done.images();
+    css = replace(css, url.source, 'url("' + dataURL + '")');
+    return css;
+  });
+})).then(function then() {
+  return css;
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.javascript" id="apidoc.module.inliner.javascript">module inliner.javascript</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.javascript.javascript" id="apidoc.element.inliner.javascript.javascript">
+        function <span class="apidocSignatureSpan">inliner.</span>javascript
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uglify(source) {
+  var notIESafe = !this.options.iesafe;
+
+  this.emit('progress', 'compressing javascript');
+
+  source = source.trim();
+
+  if (source === '') {
+    this.jobs.done.js();
+    return '';
+  }
+
+  debug('uglifying %sbytes', source.length);
+
+  var result = '';
+
+  try {
+    result = UglifyJS.minify(source, {
+      fromString: true,
+      // must set screw_ie8 for each option group
+      // https://github.com/mishoo/UglifyJS2/issues/1204#issuecomment-234714094
+      // jscs:disable requireCamelCaseOrUpperCaseIdentifiers
+      compress: { screw_ie8: notIESafe },
+      mangle: { screw_ie8: notIESafe },
+      output: { screw_ie8: notIESafe },
+      // jscs:enable requireCamelCaseOrUpperCaseIdentifiers
+    }).code;
+  } catch (e) {
+    // failed to uglify, just return it plain
+    result = source;
+  }
+
+  this.jobs.done.js();
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.inliner.toString" id="apidoc.module.inliner.toString">module inliner.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.inliner.toString.toString" id="apidoc.element.inliner.toString.toString">
+        function <span class="apidocSignatureSpan">inliner.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+function getImports(root, css) {
+css = convertCharset(css);
+// change to a string in case the CSS is a buffer, which is the case
+// when we're reading off the local file system
+if (typeof css !== 'string') {
+  css = css.<span class="apidocCodeKeywordSpan">toString</span>();
+}
+var position = css.indexOf('@import');
+var inliner = this;
+
+if (position !== -1) {
+  inliner.jobs.add('link', 1);
+  var match = (css.match(/@import(\s*.*?);/) || [null, ''])[1];
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
