@@ -1,4 +1,7 @@
-# api documentation for  [inliner (v1.12.1)](http://github.com/remy/inliner)  [![npm package](https://img.shields.io/npm/v/npmdoc-inliner.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-inliner) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-inliner.svg)](https://travis-ci.org/npmdoc/node-npmdoc-inliner)
+# npmdoc-inliner
+
+#### basic api documentation for  [inliner (v1.12.1)](http://github.com/remy/inliner)  [![npm package](https://img.shields.io/npm/v/npmdoc-inliner.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-inliner) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-inliner.svg)](https://travis-ci.org/npmdoc/node-npmdoc-inliner)
+
 #### Utility to inline images, CSS and JavaScript for a web page - useful for mobile sites
 
 [![NPM](https://nodei.co/npm/inliner.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/inliner)
